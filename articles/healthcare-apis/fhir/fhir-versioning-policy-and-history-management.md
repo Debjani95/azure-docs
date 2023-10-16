@@ -41,6 +41,8 @@ Versioning policy available to configure at as a system-wide setting and also to
 
 > [!NOTE]
 > Changing the versioning policy to `no-version` has no effect on existing resource history. If history needs to be removed for resources, use the [$purge-history](purge-history.md) operation.
+>
+> For Azure API for FHIR, Creating a support ticket is currently required to disable version history, as this capability is not provided directly on the blade.
 
 ## Configuring versioning policy
 
