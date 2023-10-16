@@ -7,7 +7,13 @@ ms.author: danlep
 ---
 
 
-* With multi-region deployment, only the [gateway component](../articles/api-management/api-management-key-concepts.md#api-management-components) of your API Management instance is replicated to multiple regions. The instance's management plane and developer portal remain hosted only in the *primary* region, the region where you originally deployed the service. 
+* With multi-region deployment, only the [gateway component](../articles/api-management/api-management-key-concepts.md#api-management-components) of your API Management instance is replicated to multiple regions. The instance's management plane and developer portal remain hosted only in the *primary* region, the region where you originally deployed the service.
+
+* If you want to configure a secondary location for your instance that's deployed in a virtual network, the VNet and subnet region should match the secondary location you are configuring.
+
+* If you're adding, removing, or enabling availability zones in the primary region, or changing subnet of primary region, then the VIP address of your instance will change. See [IP addresses of Azure API Management service](api-management-howto-ip-addresses.md#changes-to-the-ip-addresses).
+
+* However, if you're adding a secondary region, primary region's VIP of APIM will not change as every region has its own private VIP.
 
 * Gateway configurations such as APIs and policy definitions are regularly synchronized between the primary and secondary regions you add. Multi-region deployment provides availability of the API gateway in more than one region and provides service availability if one region goes offline.
 
